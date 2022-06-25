@@ -2,7 +2,7 @@
 
 This is an outline of how an NFT project launch should work.
 
-**Do not use the keys in the secrets.json they were already exposed to the public
+\*\*Do not use the keys in the secrets.json they were already exposed to the public
 
 ## 0. Prep work
 
@@ -16,9 +16,8 @@ This is an outline of how an NFT project launch should work.
 - Install dependencies
 
 ```
-npm install truffle 
-truffle init
-npm install truffle-hdwallet-provider
+npx truffle init
+npm install @truffle/hdwallet-provider
 npm install truffle-plugin-verify
 npm install @openzeppelin/contracts
 ```
@@ -51,7 +50,7 @@ truffle run verify [CONTRACT_NAME] --network [network-name]
 
 ## 3. Create provenance using hash.php scripts
 
-- Hash all images 
+- Hash all images
 - Take that chain sequence and then hash it
 - Thats the provenance
 
@@ -67,12 +66,12 @@ Preparation
 
 - Set max amount of token to mint per wallet (setMaxPublicMint)
 - Set price per nft token this price per token is done in wei (setPricePerToken) [Ether/Wei Converter](https://eth-converter.com)
-    - 80000000000000000 = 0.08 ETH
-    - 200000000000000000 = 0.2 ETH
+  - 80000000000000000 = 0.08 ETH
+  - 200000000000000000 = 0.2 ETH
 - Set up provenance value (setProvenance)
 - Set up the royalties and wallet (setDefaultRoyalty(address, fee))
-    - fee is in basis points: 1000 = 10%
-    - 750 = 7.5%
+  - fee is in basis points: 1000 = 10%
+  - 750 = 7.5%
 - Perform the reserve function (reserve) if needed
 - Setup OpenSea Collection Profile and royalty address (Images, Description, Socials)
 
@@ -89,10 +88,10 @@ After Sale Ends
 
 Enter the console in the terminal
 
-For local host 
+For local host
 
 ```
-truffle console 
+truffle console
 ```
 
 For any other network
@@ -101,13 +100,13 @@ For any other network
 truffle console --network [network-name]
 ```
 
-In the console type the address of your smart contract 
+In the console type the address of your smart contract
 
 ```
 const contract = await SmartContractNameHere.deployed()
 ```
 
- OR
+OR
 
 ```
 const contract = await SmartContractNameHere.at('ADDRESS_HERE');

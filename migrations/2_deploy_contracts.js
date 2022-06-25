@@ -1,4 +1,4 @@
-const SmartContractName = "EnterContractNameHere";
+const SmartContractName = "LotsOfLaugh";
 
 const SmartContract = artifacts.require(SmartContractName);
 
